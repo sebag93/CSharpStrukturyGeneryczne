@@ -2,7 +2,7 @@
 {
     public class KolejkaKolowa
     {
-        private double[] bufor;
+        private object[] bufor;
         private int poczatekBufora;
         private int koniecBufora;
 
@@ -13,12 +13,12 @@
 
         public KolejkaKolowa(int pojemnosc)
         {
-            bufor = new double[pojemnosc + 1];
+            bufor = new object[pojemnosc + 1];
             poczatekBufora = 0;
             koniecBufora = 0;
         }
 
-        public void Zapisz(double wartosc)
+        public void Zapisz(object wartosc)
         {
             bufor[koniecBufora] = wartosc;
             koniecBufora = (koniecBufora + 1) % bufor.Length;
@@ -27,7 +27,7 @@
                 poczatekBufora = (poczatekBufora + 1) % bufor.Length;
         }
 
-        public double Czytaj()
+        public object Czytaj()
         {
             var wynik = bufor[poczatekBufora];
             poczatekBufora = (poczatekBufora + 1) % bufor.Length;
