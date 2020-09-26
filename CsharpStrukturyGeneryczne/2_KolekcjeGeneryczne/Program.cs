@@ -13,8 +13,29 @@ namespace _2_KolekcjeGeneryczne
             //LinkedList();
             //LinkedList2();
             //Dictionary();
+            SortedDictionary();
 
-            var pracownicy = new SortedDictionary<string, List<Pracownik>>();
+            //SortedList();
+        }
+
+        private static void SortedList()
+        {
+            var listaPosortowana = new SortedList<int, string>();
+
+            listaPosortowana.Add(3, "trzy");
+            listaPosortowana.Add(1, "jeden");
+            listaPosortowana.Add(4, "cztery");
+            listaPosortowana.Add(2, "dwa");
+
+            foreach (var item in listaPosortowana)
+            {
+                Console.WriteLine(item.Value);
+            }
+        }
+
+        private static void SortedDictionary()
+        {
+            var pracownicy = new SortedList<string, List<Pracownik>>();
 
             pracownicy.Add("Sprzedaż", new List<Pracownik> { new Pracownik { Imie = "Jan", Nazwisko = "Kowal" },
                                                              new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" },
