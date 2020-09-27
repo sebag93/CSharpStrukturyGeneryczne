@@ -17,22 +17,18 @@ namespace _2_KolekcjeGeneryczne
             //SortedList();
             //SortedSet();
 
-            var pracownicy = new SortedDictionary<string, SortedSet<Pracownik>>();
+            var pracownicy = new DzialyKolekcja();
 
-            pracownicy.Add("Sprzedaż", new SortedSet<Pracownik>(new PracownikComparer()));
+            pracownicy.Add("Sprzedaż", new Pracownik { Nazwisko = "Nowak" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Czapla" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Głowacki" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Nowak" });
 
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Nowak" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Głowacki" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Czapla" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Nowak" });
-
-            pracownicy.Add("Ksiegowosc", new SortedSet<Pracownik>(new PracownikComparer()));
-
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Kowal" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Kaczor" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Bogacki" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
+            pracownicy.Add("Ksiegowosc", new Pracownik { Nazwisko = "Nowak" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Kowal" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Kaczor" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Bogacki" })
+                      .Add("Ksiegowosc", new Pracownik { Nazwisko = "Nowak" });
 
             foreach (var dzial in pracownicy)
             {
